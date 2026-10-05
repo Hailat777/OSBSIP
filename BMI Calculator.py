@@ -1,13 +1,15 @@
-print("\n Hello Everyone Welcom!")
-print("\n  BMI CALCULATOR !")
+print("\n Hello Everyone Welcome!")
+print("\n  BMI Calculator!")
+def bmi_calcu(height, weight):
+    return round(weight/height**2,2)
 while True:
     print("Type 'q'to quit")
-    height_input=input("Enter your height in m: ")
+    height_input=input("Enter your height in m: ").strip()
     if height_input.lower()=="q":
         print("Goodbye")
         break
     
-    weight_input=input("Enter your weight in kg: ")
+    weight_input=input("Enter your weight in kg: ").strip()
     if height_input.lower()=="q":
         print("Goodbye")
         break
@@ -16,21 +18,20 @@ while True:
         weight=float(weight_input)
     except ValueError:
         print("Plese enetr valid number")
-        if height <=0 or weight<=0:
-            print("Heigh and weight must be graterthan zero.")
-            continue
-def bmi_calcu(height, weight):
-    return round(weight/height**2,2)
-def bmi_calcu(bmi):
+        continue
+    if height <=0 or weight<=0:
+        print("Please enter Valid number .")
+        continue
+    bmi = bmi_calcu(height,weight)
     if bmi < 18.5:
-        print(f"your BMI is {bmi}, is under weight")
+        print(f"Your BMI is {bmi}, you are under weight")
             
     elif bmi < 25:
-            print(f"your BMI is {bmi}, is normal")
+            print(f"Your B0.5MI is {bmi},  you are normal")
     elif bmi < 30:
-                print(f"your BMI is {bmi}, is overweight")
+                print(f"Your BMI is {bmi}, you are overweight")
     elif bmi < 35:
-                print(f"your BMI is {bmi}, is obese")
+                print(f"Your BMI is {bmi}, you are obese")
     else:
-          print("You are clinically obese")
-print(bmi_calcu)
+          print("You are Clinically obese")
+
